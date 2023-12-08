@@ -13,6 +13,9 @@ type Conf struct {
 	DbName            string
 	DbLogErrors       bool
 	DbLogQueries      bool
+	DbLock            bool
+	DbRollback        bool
+	DbPreviewDown     bool
 	UiAddr            string
 	CertDir           string
 	CertHost          string
