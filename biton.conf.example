@@ -1,0 +1,30 @@
+LogDir       = "/var/log/biton"
+LogLevel     = "trace"
+LogFileSize  = "100M"
+LogFileTime  = "12h"
+LogDaysCount = 12
+LogTimezone  = "MSK"
+
+DbHost       = ""
+DbUser       = ""
+DbPass       = ""
+DbName       = ""
+DbLogErrors  = true
+DbLogQueries = false
+
+UiAddr   = ":443"
+CertDir  = "/etc/biton/cert"
+CertHost = ""
+
+IpWhiteListFile = "/etc/biton/white.lst"
+
+JwtKey = "x39lx0lj038sj"
+JwtExpirationTime = "24h"
+JwtRefreshExpirationTime = "168h"
+
+TelegramBotToken  = ""
+TelegramBotChatId = ""
+
+EmailSmtpServer = ""
+EmailAccount    = ""
+EmailPassword   = ""
