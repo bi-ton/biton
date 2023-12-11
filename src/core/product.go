@@ -6,6 +6,6 @@ type Product struct {
 	bun.BaseModel `bun:"table:main.products"`
 	Id            int
 	Name          string
-	Price         string
+	Price         float64
 	Done          bool
 }
