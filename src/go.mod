@@ -7,6 +7,7 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/schema v1.2.1
 	github.com/msw-x/moon v0.4.11
+	github.com/uptrace/bun v1.1.13
 )
 
 require (
@@ -21,7 +22,6 @@ require (
 	github.com/tklauser/go-sysconf v0.3.12 // indirect
 	github.com/tklauser/numcpus v0.6.1 // indirect
 	github.com/tmthrgd/go-hex v0.0.0-20190904060850-447a3041c3bc // indirect
-	github.com/uptrace/bun v1.1.13 // indirect
 	github.com/uptrace/bun/dialect/pgdialect v1.1.13 // indirect
 	github.com/uptrace/bun/driver/pgdriver v1.1.13 // indirect
 	github.com/vmihailenco/msgpack/v5 v5.3.5 // indirect
