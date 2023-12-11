@@ -1,0 +1,4 @@
+bin
+biton.conf
+.vscode
+src/version.go
