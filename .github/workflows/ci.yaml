@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+    branches: [ "main", "dev" ]
+
+jobs:
+  deploy:
+    name: "Deploy"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: "Get branch"
+        id: vars
+        run: echo "branch=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+      - name: "Check branch"
+        run: echo ${{ steps.vars.outputs.branch }}
+      - name: "Configure SSH"
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/host.key
+          chmod 600 ~/.ssh/host.key
+          cat >>~/.ssh/config <<END
+          Host host
+            HostName $SSH_HOST
+            User root
+            IdentityFile ~/.ssh/host.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+      - name: "Update"
+        run: ssh host "ci update ${{ github.event.repository.name }} ${{ steps.vars.outputs.branch }}"
