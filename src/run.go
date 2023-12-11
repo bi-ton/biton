@@ -1,6 +1,8 @@
 package main
 
 import (
+	"biton/core"
+	"biton/webapi"
 	"embed"
 	"time"
 
@@ -8,9 +10,6 @@ import (
 	"github.com/msw-x/moon/db"
 	"github.com/msw-x/moon/telegram"
 	"github.com/msw-x/moon/ulog"
-
-	"biton/core"
-	"biton/webapi"
 )
 
 //go:embed migrations/*.sql
@@ -26,9 +25,6 @@ func run(conf Conf) {
 	ulog.SetHook(func(m ulog.Message) {
 		bot.SendLog(m)
 	})
-
-	app.WaitInterrupt()
-	return
 
 	db := db.New(db.Options{
 		User:          conf.DbUser,
